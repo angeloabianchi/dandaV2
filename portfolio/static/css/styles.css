@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(51, 51, 51);
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    color: #F5DEB3;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.1;
+    position: fixed;
+    z-index: 1;
+    width: stretch;
+    transition: opacity 500ms;
+    height: 150px;
+}
+
+nav:hover {
+    transition: opacity 500ms;
+    opacity: 0.5;
+}
+
+nav div {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+nav a {
+    color: #F5DEB3;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: x-large;
+    font-family: "Qahiri", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    width: auto;
+    height: 20px;
+    text-align: center;
+    align-content: center;
+    transition: color background-color 500ms;
+    transition: font-size 500ms;
+
+}
+
+nav a:hover {
+    color: #ffb222;
+    font-size: xxx-large;
+    transition: color background-color font-size 500ms;
+    transition: font-size 500ms;
+}
+
+nav img {
+    height: 150px;
+    width: auto;
+}
+
+h1 {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+h3 {
+    color: #333;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    font-size: 18px;
+}
+
+.home-page-content {
+    animation: afterLoading 2s forwards;
+    background-color: rgb(51, 51, 51);
+    display: block;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-information {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.card-text {
+    width: 100%;
+}
+
+.card-text h3{
+    font-size: xx-large;
+}
+
+.card-chronology {
+    width: 100%;
+}
+
+.next-project {
+    display: none;
+    flex-direction: column;
+}
+
+@keyframes afterLoading {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

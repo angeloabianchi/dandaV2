@@ -1,0 +1,14 @@
+{% extends 'home/home.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="about-page-content">
+        <h3>ABOUT</h3>
+        <p>Welcome to my ABOUT page!</p>
+    </div>
+{% endblock %}

@@ -1,0 +1,5 @@
+.contact-page-content {
+    animation: afterLoading 2s forwards;
+    background-color: rgb(9, 48, 24);
+    display: block;
+}
