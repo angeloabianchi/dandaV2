@@ -8,22 +8,30 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>FILMOGRAPHY</title>
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Metamorphous&family=Qahiri&display=swap" rel="stylesheet">
+        
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
         {% block extra_css %}{% endblock %}
-        <script>
-            window.onscroll = () => {
-                if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-                    
 
-                } else {
-                    
-                    
-                }
-            }
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        
+        <script
+            type="text/babel"
+            src="{% static 'js/components/Scroll.jsx' %}">
         </script>
+
+        <script type="text/babel">
+
+            ReactDOM.createRoot(document.getElementById("scroll-root"))
+                .render(<Scroll />);
+
+        </script>
+
     </head>
     <body>
         <nav>
@@ -44,28 +52,28 @@
             {% for project in projects reversed %}
                 <div class="project-card">
                     {% if project.name == "AIXÒ-NO-VA-DE-FUTBOL" %}
-                    <div id="vimeo-player" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
-                        <iframe 
-                            id="vimeo-iframe"
-                            src="https://player.vimeo.com/video/{{ project.video }}?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;muted=1&amp;controls=0&amp;loop=1" 
-                            frameborder="0" 
-                            allow="autoplay; fullscreen; picture-in-picture" 
-                            allowfullscreen 
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
-                            title="{{ project.display_name }}"> 
-                        </iframe>
-                    </div>
-                    <div class="card-information">
-                        <div class="card-text">
-                            <h3>{{ project.display_name }}</h3>
-                            <a href="{% url 'project' project.name %}">View Project</a>
-                            <p>2025</p>
+                        <div id="vimeo-player" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0;">
+                            <iframe 
+                                id="vimeo-iframe"
+                                src="https://player.vimeo.com/video/{{ project.video }}?badge=0&amp;autopause=0&amp;quality_selector=1&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;muted=1&amp;controls=0&amp;loop=1" 
+                                frameborder="0" 
+                                allow="autoplay; fullscreen; picture-in-picture" 
+                                allowfullscreen 
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                                title="{{ project.display_name }}"> 
+                            </iframe>
                         </div>
-                        <div class="card-chronology">
-                            <p>cronologia</p>
+                        <div class="card-information">
+                            <div class="card-text">
+                                <h3>{{ project.display_name }}</h3>
+                                <a href="{% url 'project' project.name %}">View Project</a>
+                                <p>2025</p>
+                            </div>
+                            <div class="card-chronology">
+                                <p>cronologia</p>
+                            </div>
+                            
                         </div>
-                        
-                    </div>
 
                     {% else %}
                         <div class="next-project">
@@ -79,5 +87,8 @@
         </div>
         <script src="https://player.vimeo.com/api/player.js"></script>
         {% endblock %}
+
+        <div id="scroll-root"></div>
+
     </body>
 </html>
